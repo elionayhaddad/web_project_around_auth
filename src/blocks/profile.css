@@ -1,0 +1,117 @@
+.profile {
+  width: 69%;
+  max-width: 880px;
+  margin: 0 auto 50px;
+  align-items: center;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.profile__overlay {
+  position: absolute;
+  width: 121px;
+  height: 121px;
+  border-radius: 90%;
+}
+.profile__overlay:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url(../images/lapis_edit.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin: 0;
+}
+.profile__image {
+  margin: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 90%;
+}
+
+.profile__info {
+  margin: 0 10px;
+  width: 415px;
+  height: 77px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+.profile__info-edit {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+}
+.profile__artist {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  color: #ffffff;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.profile__text {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@media screen and (max-width: 1000px) {
+  .profile {
+    width: 89%;
+    max-width: 282px;
+    height: 100%;
+    max-height: 286px;
+    margin: 0 auto 36px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile__image {
+    width: 90%;
+    max-width: 120px;
+    height: 100%;
+    max-height: 120px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+  }
+  .profile__artist {
+    width: 100%;
+    max-width: 196px;
+    font-size: 22px;
+    line-height: 22px;
+  }
+  .profile__info {
+    width: 100%;
+    max-width: 282px;
+    height: 100%;
+    max-height: 50px;
+    align-items: center;
+    margin-bottom: 36px;
+  }
+  .profile__info-edit {
+    height: 22px;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  .profile__text {
+    width: 100%;
+    max-width: 282px;
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+  }
+}

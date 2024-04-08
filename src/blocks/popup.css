@@ -1,0 +1,201 @@
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  transition: opacity 0.5s, visibility 0.5s ease-out;
+  visibility: hidden;
+  opacity: 0;
+}
+.popup_is-opened {
+  visibility: visible;
+  opacity: 1;
+}
+.popup__overflow {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+}
+.popup__container {
+  position: absolute;
+  width: 34%;
+  max-width: 430px;
+  height: 100%;
+  max-height: 330px;
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+}
+.popup__container_delete-card {
+  position: absolute;
+  width: 34%;
+  max-width: 430px;
+  height: 100%;
+  max-height: 181px;
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+}
+.popup__container_edit-avatar {
+  position: absolute;
+  width: 34%;
+  max-width: 430px;
+  height: 100%;
+  max-height: 272px;
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+}
+
+.popup__title {
+  margin: 34px 64px 54px 36px;
+  color: #000;
+  font-size: 24px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 900;
+  line-height: 29px;
+}
+.popup__title_delete-card {
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.popup__field {
+  width: 82%;
+  max-width: 358px;
+  height: 100%;
+  max-height: 28px;
+  margin: 0 auto 30px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 13.26px;
+  border-color: none;
+  border-style: none;
+}
+.popup__input {
+  height: 100%;
+  max-height: 14px;
+  padding: 0 0 13px;
+  color: #000;
+  font-size: 14px;
+  font-family: "Inter", Arial, sans-serif;
+  border-right-color: white;
+  border-left-color: white;
+  border-top-color: white;
+  border-bottom-color: rgba(0, 0, 0, 0.20000000298023224);
+  border-style: solid;
+}
+.popup__input_type_error {
+  padding-bottom: 9px;
+  border-bottom-color: red;
+  border-bottom-width: 1px;
+  border-style: solid;
+  margin-bottom: -10px;
+}
+.popup__input-error_active {
+  min-width: 164px;
+  max-width: 100%;
+  color: #f00;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.popup__container-image {
+  padding-top: 40px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+.popup__link-image {
+  max-width: 75vw;
+  max-height: 75vh;
+}
+.popup__legend-image {
+  max-width: 291px;
+  max-height: 12px;
+  margin-top: 10px;
+  color: #fff;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+@media screen and (max-width: 1000px) {
+  .popup_image-content {
+    max-width: 75vw;
+    max-height: 75vh;
+  }
+  .popup_image-link {
+    max-width: 75vw;
+    max-height: 75vh;
+  }
+  .popup__container {
+    width: 89%;
+    max-width: 282px;
+    height: 100%;
+    max-height: 322px;
+    margin-top: 0;
+  }
+  .popup__container_delete-card {
+    height: 100%;
+    max-height: 181px;
+    margin-top: 0;
+  }
+  .popup__container_edit-avatar {
+    height: 100%;
+    max-height: 240px;
+    margin-top: 0;
+  }
+  .popup__title {
+    width: 83%;
+    max-width: 238px;
+    line-height: 22px;
+    margin: 25px auto 56px;
+    color: #000;
+    font-size: 18px;
+  }
+  .popup__title_delete-card {
+    margin: 34px auto 20px auto;
+    line-height: normal;
+  }
+  .popup__title_edit-avatar {
+    margin: 34px auto 30px auto;
+    line-height: normal;
+  }
+  .popup__field {
+    width: 83%;
+    max-width: 238px;
+    height: 100%;
+    max-height: 26px;
+    margin: 0 auto 40px;
+  }
+  .popup__input {
+    width: 100%;
+    max-width: 238px;
+    height: 100%;
+    max-height: 17px;
+  }
+  .popup__field-img {
+    width: 100%;
+    max-width: 238px;
+  }
+}

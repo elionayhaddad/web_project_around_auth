@@ -1,0 +1,163 @@
+.button {
+  background-color: #000;
+  cursor: pointer;
+}
+
+.button_profile {
+  border: 1px solid #ffffff;
+  width: 100%;
+  max-width: 24px;
+  height: 100%;
+  max-height: 24px;
+  margin-top: 15px;
+}
+.button_profile:hover {
+  opacity: 0.6;
+}
+.button__profile-image {
+  width: 100%;
+  max-width: 10px;
+  height: 100%;
+  max-height: 10px;
+}
+.button_add {
+  width: 150px;
+  height: 50px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column-start: 6;
+  grid-column-end: 7;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+}
+.button_add:hover {
+  opacity: 0.6;
+}
+.button__add-image {
+  width: 100%;
+  max-width: 22px;
+  height: 100%;
+  max-height: 22px;
+}
+.button_close {
+  background-color: unset;
+  max-width: 40px;
+  max-height: 40px;
+  position: absolute;
+  top: 15%;
+  left: 67%;
+  z-index: 4;
+}
+.button_close:hover {
+  opacity: 0.6;
+}
+.button_close_image {
+  background-color: unset;
+  position: absolute;
+  top: 2%;
+  left: 102%;
+  z-index: 4;
+}
+.button_close_delete-card {
+  background-color: unset;
+  position: absolute;
+  top: 30%;
+  right: 15%;
+  z-index: 4;
+}
+.button_submit {
+  width: 82%;
+  max-width: 358px;
+  height: 50.2px;
+  margin: 10px auto 37px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Inter", Arial, sans-serif;
+  border-radius: 2px;
+  border-color: none;
+  border-style: none;
+}
+.button_submit:hover {
+  opacity: 0.8;
+}
+.button_submit_confirm {
+  max-height: 100px;
+}
+.button_inactive {
+  cursor: default;
+  background-color: white;
+  color: black;
+  border-radius: 2px;
+  border: 1px solid #000;
+  opacity: 0.20000000298023224;
+}
+.button_inactive:hover {
+  background-color: white;
+  color: black;
+  border-radius: 2px;
+  border: 1px solid #000;
+  opacity: 0.20000000298023224;
+}
+
+@media screen and (max-width: 1000px) {
+  .button_profile {
+    width: 100%;
+    max-width: 18px;
+    height: 100%;
+    max-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .button__profile-image {
+    width: 250%;
+    max-width: 10px;
+    height: 100%;
+    max-height: 10px;
+  }
+  .button_add {
+    width: 100%;
+    max-width: 282px;
+  }
+  .button__add-image {
+    width: 100%;
+    max-width: 16px;
+    height: 100%;
+    max-height: 16px;
+  }
+  .button_close {
+    width: 100%;
+    max-width: 26px;
+    height: 100%;
+    max-height: 26px;
+    position: absolute;
+    top: 20%;
+    right: 20%;
+  }
+  .button_close_delete-card {
+    top: 28%;
+    right: 15%;
+    z-index: 4;
+  }
+  .button_close_image {
+    position: absolute;
+    top: 2%;
+  }
+  .button_close_edit-avatar {
+    position: absolute;
+    top: 18%;
+  }
+  .button_submit {
+    width: 85%;
+    max-width: 238px;
+    height: 100%;
+    max-height: 46px;
+    margin: 16px auto 25px;
+    font-size: 14px;
+  }
+}
