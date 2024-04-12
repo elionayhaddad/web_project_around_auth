@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import Card from "./Card.js";
 
 import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
+import Card from "./Card.js";
 import buttonEdit from "../images/button__edit.svg";
 import buttonNewPlace from "../images/more.svg";
 
-export default function Main(props) {
+function Main(props) {
   const currentUser = useContext(CurrentUserContext);
 
   return (
@@ -69,3 +69,4 @@ export default function Main(props) {
     </>
   );
 }
+export default Main;

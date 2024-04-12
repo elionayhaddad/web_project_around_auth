@@ -35,9 +35,9 @@ export default function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
       isClose={onClose}
       onSubmit={handleSubmit}
     >
-      <fieldset className="popup__field">
+      <fieldset className="form__field">
         <input
-          className="popup__input name-input"
+          className="form__input form__input_name"
           required
           type="text"
           name="name"
@@ -45,11 +45,11 @@ export default function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
           placeholder="Nome"
           onChange={handleNameChange}
         />
-        <span className="popup__input-error name-input-error"></span>
+        <span className="form__input-error name-input-error"></span>
       </fieldset>
-      <fieldset className="popup__field">
+      <fieldset className="form__field">
         <input
-          className="popup__input role-input"
+          className="form__input form__input_role"
           type="text"
           required
           name="about"
@@ -57,7 +57,7 @@ export default function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
           placeholder="Função"
           onChange={handleDescriptionChange}
         />
-        <span className="popup__input-error role-input-error"></span>
+        <span className="form__input-error role-input-error"></span>
       </fieldset>
     </PopupWithForm>
   );

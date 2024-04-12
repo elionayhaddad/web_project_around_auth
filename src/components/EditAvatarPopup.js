@@ -28,9 +28,9 @@ export default function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
       isClose={onClose}
       onSubmit={handleSubmit}
     >
-      <fieldset className="popup__field">
+      <fieldset className="form__field">
         <input
-          className="popup__input input-photo-user"
+          className="form__input form__input_photo-user"
           required
           ref={ImageRef}
           type="url"
@@ -40,7 +40,7 @@ export default function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
           minLength="1"
           onChange={handleChange}
         />
-        <span className="popup__input-error link-input-error"></span>
+        <span className="form__input-error link-input-error"></span>
       </fieldset>
     </PopupWithForm>
   );

@@ -1,17 +1,12 @@
 import { useEffect, useState } from "react";
-import {
-  Switch,
-  Router,
-  Redirect,
-  withRouter,
-  useHistory,
-} from "react-router-dom";
+import { Switch, Route, Redirect, withRouter } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import Header from "./Header";
-import Main from "./Main";
-import Footer from "./Footer";
 import Login from "./Login";
 import Register from "./Register";
-import ProtectedRouter from "./ProtectedRoute";
+import ProtectedRoute from "./ProtectedRoute";
+import Main from "./Main";
+import Footer from "./Footer";
 import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
@@ -19,10 +14,11 @@ import ImagePopup from "./ImagePopup";
 import DeleteCardPopup from "./DeleteCardPopup";
 import api from "../utils/api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
-import ProtectedRoute from "./ProtectedRoute";
+
+import * as auth from "../utils/auth";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
@@ -31,6 +27,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState([]);
   const [cards, setCards] = useState([]);
   const [element, setElement] = useState([]);
+  const newHistory = createBrowserHistory();
 
   useEffect(() => {
     api
@@ -67,7 +64,6 @@ function App() {
   function handleCardClick(name, url) {
     setSelectedCard({ name, url });
   }
-
   function handleRemCardClick() {
     setIsRemCardPopupOpen(true);
   }
@@ -84,7 +80,6 @@ function App() {
     setIsRemCardPopupOpen(false);
     window.removeEventListener("keyup", closeAllPopups);
   }
-
   function handleUpdateUser(data) {
     api
       .setUserInfo(data)
@@ -98,7 +93,6 @@ function App() {
 
     closeAllPopups();
   }
-
   function handleUpdateAvatar(data) {
     api
       .updateAvatar(data)
@@ -112,18 +106,15 @@ function App() {
 
     closeAllPopups();
   }
-
   function getCard(card) {
     setElement(card);
   }
-
   function handleCardLike(card) {
     const isLiked = card.likes.some((i) => i._id === currentUser._id);
     api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
       setCards((state) => state.map((c) => (c._id === card._id ? newCard : c)));
     });
   }
-
   function handleCardDelete(e) {
     e.preventDefault();
     api.deleteCards(element._id).then(() => {
@@ -132,7 +123,6 @@ function App() {
       closeAllPopups();
     });
   }
-
   function handleAddPlaceSubmit(card) {
     api
       .createCards(card)
@@ -147,27 +137,52 @@ function App() {
     closeAllPopups();
   }
 
+  async function handleTokenCheck() {
+    if (localStorage.getItem("jwt")) {
+      const token = localStorage.getItem("jwt");
+      try {
+        const res = await auth.checkToken(token);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+
+  function handleLogout() {
+    setLoggedIn(false);
+  }
+
+  function handleLogin() {
+    setLoggedIn(true);
+  }
+
   return (
     <div className="App" onKeyDown={(e) => handleEscClose(e)} tabIndex={-1}>
       <CurrentUserContext.Provider value={currentUser}>
         <Header />
 
-        <Main
-          onEditProfileClick={handleEditProfileClick}
-          onAddPlaceClick={handleAddPlaceClick}
-          onEditAvatarClick={handleEditAvatarClick}
-          onCardClick={handleCardClick}
-          onRemCardClick={handleRemCardClick}
-          cards={cards}
-          onCardLike={handleCardLike}
-          onCardDelete={getCard}
-        >
-          <Switch>
-            <ProtectedRoute exact path="/" />
-            <Route exact path="/"></Route>
-          </Switch>
-        </Main>
+        <Switch>
+          <ProtectedRoute exact path="/" loggedIn={loggedIn} component={Main} />
+          <Route exact path="/" history={newHistory}>
+            <Main
+              onEditProfileClick={handleEditProfileClick}
+              onAddPlaceClick={handleAddPlaceClick}
+              onEditAvatarClick={handleEditAvatarClick}
+              onCardClick={handleCardClick}
+              onRemCardClick={handleRemCardClick}
+              cards={cards}
+              onCardLike={handleCardLike}
+              onCardDelete={getCard}
+            ></Main>
+          </Route>
 
+          <Route path="/login" history={newHistory}>
+            <Login handleLogin={handleLogin} />
+          </Route>
+          <Route path="/register" history={newHistory}>
+            <Register />
+          </Route>
+        </Switch>
         <EditProfilePopup
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}
@@ -204,4 +219,5 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
+/* "homepage": "https://elionayhaddad.github.io/web_project_around_auth",*/
