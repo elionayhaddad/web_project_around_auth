@@ -28,9 +28,9 @@ function AddPlacePopup({ isOpen, onClose, onAddPlaceSubmit }) {
       isClose={onClose}
       onSubmit={handleSubmit}
     >
-      <fieldset className="popup__field">
+      <fieldset className="form__field">
         <input
-          className="popup__input title-input"
+          className="form__input form__input_title"
           required
           ref={nameRef}
           type="text"
@@ -39,11 +39,11 @@ function AddPlacePopup({ isOpen, onClose, onAddPlaceSubmit }) {
           onChange={handleNameChange}
           minLength="1"
         />
-        <span className="popup__input-error title-input-error"></span>
+        <span className="form__input-error title-input-error"></span>
       </fieldset>
-      <fieldset className="popup__field">
+      <fieldset className="form__field">
         <input
-          className="popup__input link-input"
+          className="form__input form__input_link"
           required
           type="url"
           ref={urlRef}
@@ -53,7 +53,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlaceSubmit }) {
           onChange={handleUrlChange}
           minLength="1"
         />
-        <span className="popup__input-error link-input-error"></span>
+        <span className="form__input-error link-input-error"></span>
       </fieldset>
     </PopupWithForm>
   );

@@ -1,0 +1,177 @@
+.form {
+  position: absolute;
+  width: 34%;
+  max-width: 430px;
+  height: 100%;
+  max-height: 330px;
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+}
+.form_delete-card {
+  position: absolute;
+  width: 34%;
+  max-width: 430px;
+  height: 100%;
+  max-height: 181px;
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+}
+.form_edit-avatar {
+  position: absolute;
+  width: 34%;
+  max-width: 430px;
+  height: 100%;
+  max-height: 272px;
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+}
+.form_auth {
+  max-height: 100vh;
+  position: static;
+  background-color: #000;
+  margin: 0 auto 40px;
+  box-shadow: none;
+  border: none;
+}
+.form__title {
+  margin: 34px 64px 54px 36px;
+  font-size: 24px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 900;
+  line-height: 29px;
+}
+.form__title_delete-card {
+  line-height: normal;
+  margin-bottom: 20px;
+  color: #000;
+}
+.form__title_auth {
+  width: 358px;
+  height: 29px;
+  margin: 60px auto 40px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #ffffff;
+}
+.form__field {
+  width: 82%;
+  max-width: 358px;
+  height: 100%;
+  max-height: 28px;
+  margin: 0 auto 30px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 13.26px;
+  border-color: none;
+  border-style: none;
+}
+.form__field_auth {
+  width: 358px;
+  height: 27px;
+  border-bottom: 2px solid;
+  border-bottom-color: #cccccc;
+}
+.form__input {
+  height: 100%;
+  max-height: 14px;
+  padding: 0 0 13px;
+  color: #000;
+  font-size: 14px;
+  font-family: "Inter", Arial, sans-serif;
+  border-right-color: white;
+  border-left-color: white;
+  border-top-color: white;
+  border-bottom-color: rgba(0, 0, 0, 0.20000000298023224);
+  border-style: solid;
+}
+.form__input_auth {
+  background-color: #000000;
+  color: #ffffff;
+  width: 358px;
+  height: 27px;
+  border-style: none;
+}
+.form__redirect {
+  width: 358px;
+  height: 17px;
+  margin: 0 auto 0;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+}
+.form__redirect-link {
+  color: white;
+  text-decoration: none;
+}
+.form__redirect-link:hover {
+  opacity: 0.8;
+}
+@media screen and (max-width: 1000px) {
+  .form {
+    width: 89%;
+    max-width: 282px;
+    height: 100%;
+    max-height: 322px;
+    margin-top: 0;
+  }
+  .form_delete-card {
+    height: 100%;
+    max-height: 181px;
+    margin-top: 0;
+  }
+  .form_edit-avatar {
+    height: 100%;
+    max-height: 240px;
+    margin-top: 0;
+  }
+  .form__title {
+    width: 83%;
+    max-width: 238px;
+    line-height: 22px;
+    margin: 25px auto 56px;
+    color: #000;
+    font-size: 18px;
+  }
+  .form__title_delete-card {
+    margin: 34px auto 20px auto;
+    line-height: normal;
+  }
+  .form__title_edit-avatar {
+    margin: 34px auto 30px auto;
+    line-height: normal;
+  }
+  .form__field {
+    width: 83%;
+    max-width: 238px;
+    height: 100%;
+    max-height: 26px;
+    margin: 0 auto 40px;
+  }
+  .form__input {
+    width: 100%;
+    max-width: 238px;
+    height: 100%;
+    max-height: 17px;
+  }
+}
